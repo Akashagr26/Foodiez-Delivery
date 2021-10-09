@@ -1,0 +1,253 @@
+.page-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap{
+  flex:1;
+}
+
+/* variables */
+
+:root{
+  --primary:#FE5F1E;
+  --primary-hover:#b23301;
+  --secondary:#F8F8F8;
+  --pure:#fff;
+  --dark:#232323; 
+  --gray:#ccc;
+  --smooth:all .3s ease-in-out;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/*  button section start*/
+
+.btn-primary{
+  background: var(--primary);
+  transition: var(--smooth);
+}
+
+.btn-primary:hover{
+  background: var(--primary-hover);
+}
+
+/*  button section end*/
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/*  navbar section start*/
+
+.logo-link img{
+  width: 80px;
+  border-radius: 50%;
+}
+
+nav li .nav-link:hover{
+  color:var(--primary);
+  transition: var(--smooth);
+}
+
+#cart-icon{
+  color: white;
+  background-color: var(--primary);
+  transition: var(--smooth);
+}
+
+#cart-icon:hover{
+  background-color: var(--primary-hover);
+}
+
+/* navbar section end */
+
+
+/* ---------------------------------------------------------------------------------- */
+
+/* home section start */
+
+section.hero{
+  background: var(--secondary);
+  min-height: calc(100vh - 80px);
+}
+
+/* home section end */
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/*  cart section start*/
+
+section.cart{
+  background: var(--secondary);
+}
+
+.amount{
+  color: var(--primary);
+}
+
+/*  cart section end*/
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* login section start */
+
+section.login{
+  background: var(--secondary);
+  min-height: calc(100vh - 80px); 
+}
+
+section.login a{
+  color:var(--primary);
+}
+
+section.login a:hover{
+  color:var(--primary-hover);
+}
+/* login section end */
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* signup section start */
+
+section.signup{
+  background: var(--secondary);
+  min-height: calc(100vh - 80px); 
+}
+
+section.signup a{
+  color:var(--primary);
+}
+
+section.signup a:hover{
+  color:var(--primary-hover);
+}
+
+/* signup section end */
+
+
+/* ---------------------------------------------------------------------------------- */
+
+/* 404 error section start */
+
+section.error{
+  background: var(--secondary);
+  min-height: calc(100vh - 80px); 
+}
+
+#notfound{
+  position: relative;
+  height: 100vh;
+}
+
+#notfound .notfound{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.notfound{
+  max-width: 920px;
+  width: 100%;
+  line-height: 2;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.notfound .notfound-404{
+  position: absolute;
+  height: 100px;
+  top:0;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -1;
+}
+
+.notfound .notfound-404 h1{
+  font-family: "Maven Pro" ,sans-serif;
+  color: #ececec;
+  font-weight: 900;
+  font-size: 276px;
+  margin: 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.notfound h2{
+  font-family: "Maven Pro",sans-serif;
+  font-size: 46px;
+  color: #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0px;
+}
+
+.notfound p{
+  font-family:"Maven Pro",sans-serif;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.notfound a{
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+}
+
+#error-btn{
+  color: white;
+  background-color: var(--primary);
+  transition: var(--smooth);
+}
+
+#error-btn:hover{
+  background-color: var(--primary-hover);
+}
+
+
+/* 404 error section end */
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* Footer start*/
+
+footer{
+  width: 100vw;
+  height: auto;
+  background: #84848C;
+}
+
+
+.footer p{
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 50px;  /* should be same as footer height to aligh vertically */
+}
+
+/* Footer end*/ 
+
+
+
+/* ---------------------------------------------------------------------------------- */
