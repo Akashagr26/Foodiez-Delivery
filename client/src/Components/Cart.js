@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { FaPlus, FaMinus, FaTrashAlt } from 'react-icons/fa';
 import EmptyCart from "../images/empty-cart.png"
 import CartIcon from "../images/cart-black.png"
 import PizzaIcon from "../images/pizza.png"
@@ -21,8 +22,18 @@ const Cart = () => {
                                 <h1>Marinara</h1>
                                 <span>MEDIUM</span>
                             </div>
-                            <span className="flex-1">1 Pcs</span>
+                            <span className="add-minus-quantity flex-1">
+                                {/* <i className="fas fa-minus minus" onClick={() => decrement(id)}></i> */}
+                                <button><FaPlus /></button>
+                                <input type="text" placeholder="2" />
+                                {/* <i className="fas fa-plus add" onClick={() => increment(id)}></i> */}
+                                <button><FaMinus /></button>
+                            </span>
                             <span className=" font-bold text-lg">₹300</span>
+                            <span className="remove-item">
+                                {/* <i className="fas fa-trash-alt remove" onClick={() => removeItem(id)}></i> */}
+                                <button><FaTrashAlt /></button>
+                            </span>
                         </div>
                         <div className=" flex items-center my-8">
                             <img className="w-24" src={PizzaIcon} alt="" />
@@ -30,8 +41,18 @@ const Cart = () => {
                                 <h1>Marinara</h1>
                                 <span>MEDIUM</span>
                             </div>
-                            <span className="flex-1">1 Pcs</span>
+                            <span className="add-minus-quantity flex-1">
+                                {/* <i className="fas fa-minus minus" onClick={() => decrement(id)}></i> */}
+                                <button><FaPlus /></button>
+                                <input type="text" placeholder="2" />
+                                {/* <i className="fas fa-plus add" onClick={() => increment(id)}></i> */}
+                                <button><FaMinus /></button>
+                            </span>
                             <span className=" font-bold text-lg">₹300</span>
+                            <span className="remove-item">
+                                {/* <i className="fas fa-trash-alt remove" onClick={() => removeItem(id)}></i> */}
+                                <button><FaTrashAlt /></button>
+                            </span>
                         </div>
                         <div className=" flex items-center my-8">
                             <img className="w-24" src={PizzaIcon} alt="" />
@@ -39,8 +60,56 @@ const Cart = () => {
                                 <h1>Marinara</h1>
                                 <span>MEDIUM</span>
                             </div>
-                            <span className="flex-1">1 Pcs</span>
+                            <span className="add-minus-quantity flex-1">
+                                {/* <i className="fas fa-minus minus" onClick={() => decrement(id)}></i> */}
+                                <button><FaPlus /></button>
+                                <input type="text" placeholder="2" />
+                                {/* <i className="fas fa-plus add" onClick={() => increment(id)}></i> */}
+                                <button><FaMinus /></button>
+                            </span>
                             <span className=" font-bold text-lg">₹300</span>
+                            <span className="remove-item">
+                                {/* <i className="fas fa-trash-alt remove" onClick={() => removeItem(id)}></i> */}
+                                <button><FaTrashAlt /></button>
+                            </span>
+                        </div>
+                        <div className=" flex items-center my-8">
+                            <img className="w-24" src={PizzaIcon} alt="" />
+                            <div className=" flex-1 ml-4">
+                                <h1>Marinara</h1>
+                                <span>MEDIUM</span>
+                            </div>
+                            <span className="add-minus-quantity flex-1">
+                                {/* <i className="fas fa-minus minus" onClick={() => decrement(id)}></i> */}
+                                <button><FaPlus /></button>
+                                <input type="text" placeholder="2" />
+                                {/* <i className="fas fa-plus add" onClick={() => increment(id)}></i> */}
+                                <button><FaMinus /></button>
+                            </span>
+                            <span className=" font-bold text-lg">₹300</span>
+                            <span className="remove-item">
+                                {/* <i className="fas fa-trash-alt remove" onClick={() => removeItem(id)}></i> */}
+                                <button><FaTrashAlt /></button>
+                            </span>
+                        </div>
+                        <div className=" flex items-center my-8">
+                            <img className="w-24" src={PizzaIcon} alt="" />
+                            <div className=" flex-1 ml-4">
+                                <h1>Marinara</h1>
+                                <span>MEDIUM</span>
+                            </div>
+                            <span className="add-minus-quantity flex-1">
+                                {/* <i className="fas fa-minus minus" onClick={() => decrement(id)}></i> */}
+                                <button><FaPlus /></button>
+                                <input type="text" placeholder="2" />
+                                {/* <i className="fas fa-plus add" onClick={() => increment(id)}></i> */}
+                                <button><FaMinus /></button>
+                            </span>
+                            <span className=" font-bold text-lg">₹300</span>
+                            <span className="remove-item">
+                                {/* <i className="fas fa-trash-alt remove" onClick={() => removeItem(id)}></i> */}
+                                <button><FaTrashAlt /></button>
+                            </span>
                         </div>
                     </div>
                     <hr />
@@ -62,7 +131,10 @@ const Cart = () => {
                     </div>
                 </div>
 
-                {/* <div className="empty-cart ">
+
+                {/* ------------------------------empty cart section -----------------------------------*/}
+
+                <div className="empty-cart ">
                     <div className="container mx-auto text-center">
                         <h1 className=" text-3xl font-bold mb-2">Cart Empty 🙁</h1>
                         <p className="text-gray-500 text-lg mb-12">You Probably haven't ordered a yet. <br />
@@ -70,8 +142,8 @@ const Cart = () => {
                         <img className=" w-1/3 mx-auto" src={EmptyCart} alt="empty cart" />
                         <NavLink className=" inline-block px-6 py-2 rounded-full btn-primary text-white font-bold mt-12" to="/">Go back</NavLink>
                     </div>
-                </div> */}
-            </section>
+                </div>
+            </section> 
 
         </>
     )

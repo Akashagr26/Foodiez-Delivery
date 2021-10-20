@@ -63,6 +63,8 @@ nav li .nav-link:hover{
   background-color: var(--primary-hover);
 }
 
+
+
 /* navbar section end */
 
 
@@ -73,6 +75,22 @@ nav li .nav-link:hover{
 section.hero{
   background: var(--secondary);
   min-height: calc(100vh - 80px);
+}
+
+.size{
+  background: var(--secondary);
+}
+
+.add-to-cart{
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  transition: var(--smooth);
+}
+
+.add-to-cart:hover{
+  background: var(--primary);
+  border-color: var(--pure);
+  color: var(--pure);
 }
 
 /* home section end */
@@ -90,6 +108,53 @@ section.cart{
 .amount{
   color: var(--primary);
 }
+
+.add-minus-quantity {
+  /* display: flex;
+  justify-content: flex-end;
+  align-items: center; */
+}
+
+.add-minus-quantity button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.add-minus-quantity input {
+  width: 30px;
+  height: 3rem;
+  /* border: 0.141rem solid var(--primary-color); */
+  /* box-sizing: border-box; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--dark);
+  margin: 0 10px;
+  /* border-radius: 0.5rem; */
+  /* outline: none; */
+  background-color: transparent;
+}
+
+.add-minus-quantity input:focus {
+  outline: none;
+}
+
+.remove-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.remove-item button {
+  border: none;
+  background-color: transparent;
+}
+
+
 
 /*  cart section end*/
 
@@ -247,7 +312,5 @@ footer{
 }
 
 /* Footer end*/ 
-
-
 
 /* ---------------------------------------------------------------------------------- */

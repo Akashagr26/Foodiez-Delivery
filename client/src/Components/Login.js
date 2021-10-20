@@ -32,14 +32,12 @@ const Login = () => {
       window.alert("Login succeccsul");
       history.push("/");
     }
-
-
   }
 
   return (
     <>
       <section className="login py-5">
-        <div className=" container mx-auto flex justify-center items-center">
+        <div className="shadow-2xl container mx-auto flex justify-center items-center">
           <div className="left max-w-xs w-1/2">
 
             <form method="POST" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

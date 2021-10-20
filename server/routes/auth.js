@@ -1,21 +1,27 @@
 const express=require('express');
 const User = require('../models/userSchema');
-const bcrypt=require("bcryptjs")
-const jwt=require('jsonwebtoken')
-
+const bcrypt=require("bcryptjs");
+const jwt=require('jsonwebtoken');
+const homeController = require('../http/controllers/homeController');
+const authController = require('../http/controllers/authController');
+const cartController = require('../http/controllers/customer/cartController');
 
 const router = express.Router();
 
 // setting paths
-router.get('/', (req,res)=>{
-    res.send('hello from home page')
-})
-router.get('/cart', (req,res)=>{
-    res.send('hello from cart page')
-})
+router.get('/', homeController().index)
+
+router.get('/login', authController().login)
+
+router.get('/signup', authController().signup)
+
 router.get('/contact', (req,res)=>{
     res.send('hello from contact page')
 })
+
+router.get('/cart', cartController().index)
+
+router.post('/update-cart', cartController().update)
 
 //user registration route
 router.post('/signup',async (req,res)=>{

@@ -4,6 +4,9 @@ import {FaShoppingCart } from 'react-icons/fa';
 import logo from '../images/3697355.png'
 
 const Navbar = () => {
+
+
+
     return (
         <>
             <nav className=" container mx-auto flex items-center justify-between ">
@@ -24,8 +27,8 @@ const Navbar = () => {
                             <li className=" ml-6">
                                 <NavLink className="nav-link" to="/signUp">SignUp</NavLink>
                             </li>
-                            <li className=" ml-6">
-                                <NavLink className="nav-link inline-block px-4 py-2 rounded-full " id='cart-icon' to="/cart"><FaShoppingCart/></NavLink>
+                            <li className=" ml-6 ">
+                                <NavLink className="nav-link px-4 py-2 rounded-full flex items-center " id='cart-icon' to="/cart"><span className="pr-1" id="cartCounter">{}</span><FaShoppingCart/></NavLink>
                             </li>
                         </ul>
                 </div>
