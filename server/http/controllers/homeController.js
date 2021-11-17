@@ -5,8 +5,7 @@ function homeController(){
         async index(req,res){
             try {
                 const pizza= await TestMenu.find();
-                res.json(pizza)
-                res.send('hello from home page')
+                res.json(pizza);
             } catch (error) {
                 console.log(error);
             }

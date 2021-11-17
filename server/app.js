@@ -1,19 +1,19 @@
 const dotenv =require("dotenv");
-const mongoose=require("mongoose");
 const express =require("express");
 const cors = require('cors');
 const app =express();
 const session =require('express-session');
-const flash=require('express-flash')
-const MongoDbStore=require('connect-mongo')
+const flash=require('express-flash');
+const MongoDbStore=require('connect-mongo');
 
 
 // dotenv configuration
 dotenv.config({path:'./config.env'});
+
 require("./db/connect");
 const User =require('./models/userSchema');
 
-//setting json to object
+//setting body parser (json to object)
 app.use(express.json());
 
 
@@ -30,11 +30,11 @@ app.use(session({
 
 app.use(flash());
 
-//global middleware
-app.use((req,res,next)=>{
-    res.locals.session=req.session
-    next()
-})
+// //global middleware
+// app.use((req,res,next)=>{
+//     res.locals.session=req.session;
+//     next()
+// })
 
 
 // setting cross platform
@@ -43,8 +43,6 @@ app.use(cors());
 
 //linking routes files
 app.use(require('./routes/auth'));
-
-
 
 
 //setting port

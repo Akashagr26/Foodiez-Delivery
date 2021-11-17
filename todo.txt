@@ -1,0 +1,13 @@
+userRoutes=app.use(require('./routes/auth'));
+app.use('/api',userRoutes) // to prefix api to every routes
+
+
+use validator
+
+
+to add admin from rizwan playlist see video 3 or 4* onwards (to 5 also)
+
+
+visit video 6  - for middleware and admin and user middleware & also category* wala .
+
+video 7 - product api

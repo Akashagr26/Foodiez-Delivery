@@ -53,6 +53,10 @@ nav li .nav-link:hover{
   transition: var(--smooth);
 }
 
+.active:active{
+  color:var(--primary);
+}
+
 #cart-icon{
   color: white;
   background-color: var(--primary);

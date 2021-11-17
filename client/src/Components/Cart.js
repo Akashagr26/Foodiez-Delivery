@@ -73,44 +73,6 @@ const Cart = () => {
                                 <button><FaTrashAlt /></button>
                             </span>
                         </div>
-                        <div className=" flex items-center my-8">
-                            <img className="w-24" src={PizzaIcon} alt="" />
-                            <div className=" flex-1 ml-4">
-                                <h1>Marinara</h1>
-                                <span>MEDIUM</span>
-                            </div>
-                            <span className="add-minus-quantity flex-1">
-                                {/* <i className="fas fa-minus minus" onClick={() => decrement(id)}></i> */}
-                                <button><FaPlus /></button>
-                                <input type="text" placeholder="2" />
-                                {/* <i className="fas fa-plus add" onClick={() => increment(id)}></i> */}
-                                <button><FaMinus /></button>
-                            </span>
-                            <span className=" font-bold text-lg">₹300</span>
-                            <span className="remove-item">
-                                {/* <i className="fas fa-trash-alt remove" onClick={() => removeItem(id)}></i> */}
-                                <button><FaTrashAlt /></button>
-                            </span>
-                        </div>
-                        <div className=" flex items-center my-8">
-                            <img className="w-24" src={PizzaIcon} alt="" />
-                            <div className=" flex-1 ml-4">
-                                <h1>Marinara</h1>
-                                <span>MEDIUM</span>
-                            </div>
-                            <span className="add-minus-quantity flex-1">
-                                {/* <i className="fas fa-minus minus" onClick={() => decrement(id)}></i> */}
-                                <button><FaPlus /></button>
-                                <input type="text" placeholder="2" />
-                                {/* <i className="fas fa-plus add" onClick={() => increment(id)}></i> */}
-                                <button><FaMinus /></button>
-                            </span>
-                            <span className=" font-bold text-lg">₹300</span>
-                            <span className="remove-item">
-                                {/* <i className="fas fa-trash-alt remove" onClick={() => removeItem(id)}></i> */}
-                                <button><FaTrashAlt /></button>
-                            </span>
-                        </div>
                     </div>
                     <hr />
                     <div className="text-right py-5">

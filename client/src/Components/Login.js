@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
-import { FaUserAlt, FaEnvelope, FaPhoneAlt, FaUnlockAlt } from 'react-icons/fa';
+import { FaUserAlt, FaUnlockAlt } from 'react-icons/fa';
 import signInPic from '../images/login.png'
 
 
@@ -13,7 +13,7 @@ const Login = () => {
   const loginUSer = async (e)=>{
     e.preventDefault();
 
-    const res = await fetch("/login",{
+    const res = await fetch("/signin",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -40,13 +40,13 @@ const Login = () => {
         <div className="shadow-2xl container mx-auto flex justify-center items-center">
           <div className="left max-w-xs w-1/2">
 
-            <form method="POST" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form method="POST" className="bg-white shadow-md rounded px-6 pt-6 pb-8 mb-4">
 
               <div className="mb-4">
                 <label className=" text-gray-700 text-sm font-bold mb-2 flex" htmlFor="email">
                   <FaUserAlt /> <span className=" px-3">Email</span>
                 </label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="off" placeholder="Enter your email" />
+                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}  placeholder="Enter your email" />
               </div>
 
 
@@ -62,7 +62,7 @@ const Login = () => {
                 <button className=" btn-primary rounded-full text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline" type="button" onClick={loginUSer}>
                   Sign In
                 </button>
-                <NavLink className="inline-block align-baseline font-bold text-sm " to="/signUp">
+                <NavLink className="inline-block align-baseline font-bold text-sm " to="/signup">
                   Don't have account?
                 </NavLink>
               </div>
@@ -78,7 +78,7 @@ const Login = () => {
 
           <div className="right max-w-xl signInPic w-1/2">
             <figure>
-              <img src={signInPic} alt="Login Pic" />
+              <img className="px-6" src={signInPic} alt="Login Pic" />
             </figure>
           </div>
 

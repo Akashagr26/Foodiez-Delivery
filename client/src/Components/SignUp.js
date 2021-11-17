@@ -50,7 +50,7 @@ const SignUp = () => {
                 <div className="shadow-2xl container mx-auto flex justify-center items-center">
 
                     <div className="left max-w-xs w-1/2">
-                        <form method="POST" className="bg-white shadow-md rounded px-8 pt-6 pb-6 mb-4 mt-4">
+                        <form method="POST" className="bg-white shadow-md rounded px-4 pt-6 pb-6 mb-4 mt-4">
 
                             <div className="mb-4">
                                 <label className=" text-gray-700 text-sm font-bold mb-2 flex" htmlFor="name">
@@ -93,8 +93,8 @@ const SignUp = () => {
 
 
                             <div className="flex items-center justify-between">
-                                <button className=" btn-primary rounded-full text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline" name="signup" value="signup" onClick={PostData} type="button">
-                                    Sign In
+                                <button className=" btn-primary rounded-full text-white font-bold py-2 px-4 focus:shadow-outline" name="signup" value="signup" onClick={PostData} type="button">
+                                    Sign Up
                                 </button>
                                 <NavLink className="inline-block align-baseline font-bold text-sm " to="/login">
                                     Already have an account?
@@ -112,7 +112,7 @@ const SignUp = () => {
 
                     <div className='signup-image max-w-lg w-1/2'>
                         <figure>
-                            <img src={signUpPic} alt="registration pic" />
+                            <img className="px-4" src={signUpPic} alt="registration pic" />
                         </figure>
                     </div>
 

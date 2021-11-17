@@ -15,7 +15,6 @@ function cartController(){
             }
             let cart= req.session.cart
 
-            console.log(req.body);
             //check if item doesnt exixt in cart
             if(!cart.items[req.body._id]){
                 cart.items[req.body._id]={
@@ -31,7 +30,7 @@ function cartController(){
             }
 
 
-            return res.json({totalQty:req.session.cart.totalQty})
+            return res.json({totalQty:req.session.cart.totalQty,session:req.session})
         }
     }
 }

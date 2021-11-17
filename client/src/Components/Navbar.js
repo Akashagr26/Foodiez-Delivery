@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom'
 import {FaShoppingCart } from 'react-icons/fa';
 import logo from '../images/3697355.png'
 
-const Navbar = () => {
 
+
+const Navbar = () => {
 
 
     return (
@@ -22,13 +23,13 @@ const Navbar = () => {
                                 <NavLink className="nav-link" to="/contact">Contact</NavLink>
                             </li>
                             <li className=" ml-6">
-                                <NavLink className="nav-link" to="/login">Login</NavLink>
+                                <NavLink className="nav-link" to="/signin">Login</NavLink>
                             </li>
                             <li className=" ml-6">
-                                <NavLink className="nav-link" to="/signUp">SignUp</NavLink>
+                                <NavLink className="nav-link" to="/signup">SignUp</NavLink>
                             </li>
                             <li className=" ml-6 ">
-                                <NavLink className="nav-link px-4 py-2 rounded-full flex items-center " id='cart-icon' to="/cart"><span className="pr-1" id="cartCounter">{}</span><FaShoppingCart/></NavLink>
+                                <NavLink className="nav-link px-4 py-2 rounded-full flex items-center " id='cart-icon' to="/cart"><span className="pr-1" id="cartCounter"></span><FaShoppingCart/></NavLink>
                             </li>
                         </ul>
                 </div>
