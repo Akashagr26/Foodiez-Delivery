@@ -36,14 +36,19 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    tokens:[
-        {
-            token:{
-                type:String,
-                required:true
-            }
-        }
-    ]
+    role:{
+        type:String,
+        enum:['customer','admin'],
+        default:'customer'
+    },
+    // tokens:[
+    //     {
+    //         token:{
+    //             type:String,
+    //             required:true
+    //         }
+    //     }
+    // ]
 },{timestamps:true})
 
 // hashing password
@@ -59,8 +64,8 @@ userSchema.pre('save', async function(next){
 //function generating token
 userSchema.methods.generateAuthToken=async function(){
     try {
-        let token  =jwt.sign({_id:this._id},process.env.SECRET_KEY,{expiresIn:'10s'})
-        this.tokens= this.tokens.concat({token:token}) 
+        let token  =jwt.sign({_id:this._id,role:this.role},process.env.SECRET_KEY,{expiresIn:'24h'})
+        // this.tokens= this.tokens.concat({token:token})
         await this.save();
         return token;
     } catch (error) {

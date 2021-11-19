@@ -1,3 +1,5 @@
+const db = require("../../../db/connect")
+
 function cartController(){
     return{
         index(req,res){
@@ -34,5 +36,6 @@ function cartController(){
         }
     }
 }
+
 
 module.exports= cartController

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { NavLink, useHistory } from 'react-router-dom';
 import { FaUserAlt, FaEnvelope, FaPhoneAlt, FaUnlockAlt } from 'react-icons/fa';
 import signUpPic from "../images/signup.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
 
 const SignUp = () => {
 
@@ -31,15 +34,31 @@ const SignUp = () => {
             })
         })
 
-        const data = res.json();
+        const data = await res.json();
 
-        if (res.status === 422 || !data) {
-            window.alert("Invalid Registration");
+        if (res.status === 400 || !data) {
+            toast.error("Invalid Registration", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
         else {
-            window.alert("Registration sucessful");
+            toast.success("Registration sucessful", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
 
-            history.push("/login");
+            history.push("/signin");
         }
 
     }
@@ -96,7 +115,8 @@ const SignUp = () => {
                                 <button className=" btn-primary rounded-full text-white font-bold py-2 px-4 focus:shadow-outline" name="signup" value="signup" onClick={PostData} type="button">
                                     Sign Up
                                 </button>
-                                <NavLink className="inline-block align-baseline font-bold text-sm " to="/login">
+                                <ToastContainer/>
+                                <NavLink className="inline-block align-baseline font-bold text-sm " to="/signin">
                                     Already have an account?
                                 </NavLink>
                             </div>

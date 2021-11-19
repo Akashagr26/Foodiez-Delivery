@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import heroPic from "../images/food4.jpg"
 import heroPic2 from "../images/pizza.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
+
 
 const Home = () => {
     const [menu, setMenu] = useState([]);
@@ -24,8 +28,23 @@ const Home = () => {
 
     const handleInput=(pizza)=>{
         updateCart(pizza);
+        toast.success("product added", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
 
+
+    let menuSection=document.querySelector('.menu')
+
+    const moveToMenu=()=>{
+        menuSection.scrollIntoView({behavior:'smooth'});
+    }
 
     return (
         <>
@@ -34,7 +53,7 @@ const Home = () => {
                     <div className=" px-32 w-1/2">
                         <h6 className=" text-lg pb-4"><em>Are you hungry?</em></h6>
                         <h1 className=" text-6xl font-bold">Don't wait !!</h1>
-                        <button className="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary">Order Now</button>
+                        <button className="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary" onClick={() => moveToMenu()}>Order Now</button>
                     </div>
                     <div className=" w-1/2">
                         <img className="heroPic" src={heroPic} alt="hero pic" />
@@ -58,6 +77,7 @@ const Home = () => {
                                     <span>+</span>
                                     <span className="ml-4">Add</span>
                                 </button>
+                                <ToastContainer/>
                             </div>
                         </div>
                     </div>)

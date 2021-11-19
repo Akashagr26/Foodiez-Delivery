@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 import { FaUserAlt, FaUnlockAlt } from 'react-icons/fa';
 import signInPic from '../images/login.png'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const Login = () => {
 
@@ -26,10 +27,26 @@ const Login = () => {
     const data =res.json();
 
     if(res.status===400 || !data){
-      window.alert("Inavlid Login")
+      toast.error("Inavlid Login", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
     }
     else{
-      window.alert("Login succeccsul");
+      toast.success("Login succeccsul", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       history.push("/");
     }
   }
@@ -62,6 +79,7 @@ const Login = () => {
                 <button className=" btn-primary rounded-full text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline" type="button" onClick={loginUSer}>
                   Sign In
                 </button>
+                <ToastContainer/>
                 <NavLink className="inline-block align-baseline font-bold text-sm " to="/signup">
                   Don't have account?
                 </NavLink>

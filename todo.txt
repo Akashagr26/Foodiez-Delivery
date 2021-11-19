@@ -11,3 +11,10 @@ to add admin from rizwan playlist see video 3 or 4* onwards (to 5 also)
 visit video 6  - for middleware and admin and user middleware & also category* wala .
 
 video 7 - product api
+
+to create sub category in menu see video 6 from 30+ min.
+
+to apply offers and reviews of customer, see from video 7.
+
+video 8 complete ,cart implemented
+

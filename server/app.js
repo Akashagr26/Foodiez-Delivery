@@ -25,16 +25,16 @@ app.use(session({
         mongoUrl:process.env.DATABASE_OFF
     }),
     saveUninitialized:false,
-    cookie:{maxAge:1000*60*60*24} // 24 hours
+    cookie:{maxAge:1000*24*60*60} // 24 hour
 }))
 
 app.use(flash());
 
 // //global middleware
-// app.use((req,res,next)=>{
-//     res.locals.session=req.session;
-//     next()
-// })
+app.use((req,res,next)=>{
+    res.locals.session=req.session;
+    next()
+})
 
 
 // setting cross platform
@@ -43,6 +43,11 @@ app.use(cors());
 
 //linking routes files
 app.use(require('./routes/auth'));
+app.use(require('./routes/admin/auth'));
+app.use(require('./routes/category'));
+app.use(require('./routes/product'));
+app.use(require('./routes/cart'));
+
 
 
 //setting port

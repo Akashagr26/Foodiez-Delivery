@@ -1,7 +1,5 @@
-const User = require('../../models/userSchema');
+const User = require('../../../models/userSchema');
 const bcrypt=require("bcryptjs");
-
-
 
 
 function authController(){
@@ -22,12 +20,12 @@ function authController(){
                 }else if(password!=cpassword){
                     return res.status(422).json({error:"Password does not match"});
                 }else{
-                    const user=new User({name ,email,phone,password,cpassword});
+                    const user=new User({name ,email,phone,password,cpassword,role:'admin'});
 
                 await user.save();
 
                 res.status(201).json(
-                    {message:"User registered successfully"})
+                    {message:"Admin registered successfully"})
                 }
 
             } catch (error) {
@@ -44,7 +42,7 @@ function authController(){
         
                 const userLogin= await User.findOne({email:email});
         
-                if(userLogin && userLogin.role==='customer'){
+                if(userLogin && userLogin.role==='admin'){
                     const isMatch = await bcrypt.compare(password,userLogin.password)
         
                     // creating jwt token 

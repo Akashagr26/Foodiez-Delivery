@@ -7,7 +7,6 @@ import logo from '../images/3697355.png'
 
 const Navbar = () => {
 
-
     return (
         <>
             <nav className=" container mx-auto flex items-center justify-between ">
@@ -17,19 +16,19 @@ const Navbar = () => {
                 <div>
                 <ul className=" flex items-center font-bold">
                             <li className=" ml-6">
-                                <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
+                                <NavLink exact activeClassName="nav-link active" aria-current="page" to="/">Home</NavLink>
                             </li>
                             <li className=" ml-6">
-                                <NavLink className="nav-link" to="/contact">Contact</NavLink>
+                                <NavLink activeClassName="nav-link active" to="/contact">Contact</NavLink>
                             </li>
                             <li className=" ml-6">
-                                <NavLink className="nav-link" to="/signin">Login</NavLink>
+                                <NavLink activeClassName="nav-link active" to="/signin">Login</NavLink>
                             </li>
                             <li className=" ml-6">
-                                <NavLink className="nav-link" to="/signup">SignUp</NavLink>
+                                <NavLink activeClassName="nav-link active" to="/signup">SignUp</NavLink>
                             </li>
                             <li className=" ml-6 ">
-                                <NavLink className="nav-link px-4 py-2 rounded-full flex items-center " id='cart-icon' to="/cart"><span className="pr-1" id="cartCounter"></span><FaShoppingCart/></NavLink>
+                                <NavLink className="nav-link px-4 py-2 rounded-full flex items-center " id='cart-icon' to="/cart"><span id='cartCounter'></span><FaShoppingCart/></NavLink>
                             </li>
                         </ul>
                 </div>
