@@ -158,6 +158,13 @@ section.cart{
   background-color: transparent;
 }
 
+a.cart-login {
+  color:var(--pure)
+}
+
+a.cart-home{
+  color:var(--pure)
+}
 
 
 /*  cart section end*/
@@ -318,3 +325,10 @@ footer{
 /* Footer end*/ 
 
 /* ---------------------------------------------------------------------------------- */
+
+
+
+/* Contact page */
+
+
+

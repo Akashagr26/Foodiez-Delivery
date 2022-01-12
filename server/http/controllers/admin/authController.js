@@ -48,25 +48,34 @@ function authController(){
                     // creating jwt token 
                     const token = await userLogin.generateAuthToken();
                     
-                    console.log(token);
-                    res.cookie("jwtToken",token,{
-                        expires:new Date(Date.now()+(1000*24*60*60*10)),//10 days
+                    res.cookie("token",token,{
+                        expires:new Date(Date.now()+(1000*60*60)),//1 hour
                         httpOnly:true
                     })
         
                     if(!isMatch){
-                        res.status(400).json({error:"Invaid Credentials"})
+                        res.status(400).json({error:"Invaid Credential"})
                     }else{
-                        res.status(200).json({message:"Login successful"})
+                        res.status(200).json({token:token,user:userLogin,message:'Login Successfull'})
                     }
                 }
                 else{
-                    res.status(400).json({error:"Invaid Credentials"})
+                    res.status(400).json({error:"Invaid Credential"})
                 }
         
             } catch (error) {
                 console.log(error);
             }
+        },
+        async signout(req,res){
+             try {
+                res.clearCookie('token');
+                res.status(200).json({
+                    message:'Signout Successfull...!'
+                })
+             } catch (error) {
+                console.log(error);
+             }
         }
     }
 }

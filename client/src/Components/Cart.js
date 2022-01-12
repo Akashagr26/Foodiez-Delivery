@@ -89,7 +89,7 @@ const Cart = () => {
                                 </div> */}
                             </form>
                         </div>
-                        <NavLink className=" inline-block cursor-pointer px-6 py-2 rounded-full btn-primary text-white font-bold mt-6" to="/">Login to Continue</NavLink>
+                        <NavLink className=" cart-login inline-block cursor-pointer px-6 py-2 rounded-full btn-primary text-white font-bold mt-6" to="/">Login to Continue</NavLink>
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@ const Cart = () => {
                         <p className="text-gray-500 text-lg mb-12">You Probably haven't ordered a yet. <br />
                             To order a pizza, go to the main page</p>
                         <img className=" w-1/3 mx-auto" src={EmptyCart} alt="empty cart" />
-                        <NavLink className=" inline-block px-6 py-2 rounded-full btn-primary text-white font-bold mt-12" to="/">Go back</NavLink>
+                        <NavLink className=" cart-home inline-block px-6 py-2 rounded-full btn-primary text-white font-bold mt-12" to="/">Go back</NavLink>
                     </div>
                 </div>
             </section> 

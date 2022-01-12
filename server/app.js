@@ -5,13 +5,13 @@ const app =express();
 const session =require('express-session');
 const flash=require('express-flash');
 const MongoDbStore=require('connect-mongo');
-
+const path = require('path')
 
 // dotenv configuration
 dotenv.config({path:'./config.env'});
 
 require("./db/connect");
-const User =require('./models/userSchema');
+const User =require('./models/userSchema')
 
 //setting body parser (json to object)
 app.use(express.json());
@@ -48,6 +48,8 @@ app.use(require('./routes/category'));
 app.use(require('./routes/product'));
 app.use(require('./routes/cart'));
 
+// for acessing static files through path name
+app.use(express.static(path.join(__dirname,"uploads")));
 
 
 //setting port

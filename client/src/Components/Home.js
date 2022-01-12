@@ -61,7 +61,8 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="menu container mx-auto py-8">
+            <section className="hero py-5">
+                <div className="menu container mx-auto py-8">
                 <h1 className="text-xl font-bold mb-8">All Pizzas</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-16">
                     {menu.map(menus=>{
@@ -84,6 +85,7 @@ const Home = () => {
                     })
                     }
 
+                </div>
                 </div>
             </section>
         </>

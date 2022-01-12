@@ -1,9 +1,6 @@
 const User = require('../../models/userSchema');
 const bcrypt=require("bcryptjs");
 
-
-
-
 function authController(){
     return{
         async signup(req,res){
@@ -18,6 +15,7 @@ function authController(){
                 const userExist = await User.findOne({email:email})
 
                 if(userExist){
+                    console.log("Email already exist");
                     return res.status(422).json({error:"Email already exist"});
                 }else if(password!=cpassword){
                     return res.status(422).json({error:"Password does not match"});
@@ -50,7 +48,6 @@ function authController(){
                     // creating jwt token 
                     const token = await userLogin.generateAuthToken();
                     
-                    console.log(token);
                     res.cookie("jwtToken",token,{
                         expires:new Date(Date.now()+(1000*24*60*60*10)),//10 days
                         httpOnly:true
