@@ -18,7 +18,7 @@ export const signup=(user)=>{
                 }
             });
         }else {
-            if(res.status===400){
+            if(res.status >= 400 && res.status<=500){
                 dispatch({
                     type:userConstant.USER_REGISTER_FAILURE,
                     payload:{error:res.data.error}

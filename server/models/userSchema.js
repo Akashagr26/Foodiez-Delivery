@@ -14,7 +14,8 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:true,
         trim:true,
-        unique:true,    
+        unique:true,
+        // lowercase:true   // if we implement 
     },
     phone:{
         type:Number,
@@ -32,10 +33,10 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    cpassword:{
-        type:String,
-        required:true
-    },
+    // cpassword:{
+    //     type:String,
+    //     required:true
+    // },
     role:{
         type:String,
         enum:['customer','admin'],
@@ -53,18 +54,30 @@ const userSchema=new mongoose.Schema({
 
 // hashing password
 userSchema.pre('save', async function(next){
-    if(this.isModified('password')){
-        this.password=await bcrypt.hash(this.password,12);
-        this.cpassword=await bcrypt.hash(this.cpassword,12);
+    try {
+        if(this.isModified('password')){
+            this.password=await bcrypt.hash(this.password,12);
+        }
+        next();
+    } catch (error) {
+        next(error)
     }
-    next();
+
+
+
+
+    // if(this.isModified('password')){
+    //     this.password=await bcrypt.hash(this.password,12);
+    //     this.cpassword=await bcrypt.hash(this.cpassword,12);
+    // }
+    // next();
 })
 
 
 //function generating token
 userSchema.methods.generateAuthToken=async function(){
     try {
-        let token  =jwt.sign({_id:this._id,role:this.role},process.env.SECRET_KEY,{expiresIn:'24h'})
+        let token  =jwt.sign({_id:this._id,role:this.role},process.env.SECRET_KEY,{expiresIn:'1d'})
         // this.tokens= this.tokens.concat({token:token})
         await this.save();
         return token;

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import Layout from '../../Components/Layout/Layout'
 import Input from '../../Components/UI/Input/Input'
@@ -9,36 +9,36 @@ import { signup } from '../../actions/User.actions'
 
 const Signup = () => {
 
-    const [name,setName]=useState('');
-    const [email,setEmail]=useState('');
-    const [phone,setPhone]=useState('');
-    const [password,setPassword]=useState('');
-    const [cpassword,setCPassword]=useState('');
-    const [error,setError]=useState('');
-    const auth =useSelector(state=>state.auth);
-    const user =useSelector(state=>state.user);
-    const dispatch=useDispatch();
-    
-    const userSignup=(e)=>{
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [cpassword, setCPassword] = useState('');
+    const [error, setError] = useState('');
+    const auth = useSelector(state => state.auth);
+    const user = useSelector(state => state.user);
+    const dispatch = useDispatch();
+
+    const userSignup = (e) => {
 
         e.preventDefault();
 
 
-        const user={
-            name,email,password,cpassword,phone
+        const user = {
+            name, email, password, cpassword, phone
         }
 
         dispatch(signup(user))
     }
 
-    if(auth.authenticate){
-        return <Redirect to="/"/>
+    if (auth.authenticate) {
+        return <Redirect to="/" />
     }
 
-    if(user.loading){
+    if (user.loading) {
         return <h1>...Loading !</h1>
     }
-     
+
 
     return (
         <Layout>
@@ -46,13 +46,13 @@ const Signup = () => {
                 <Row style={{ marginTop: '50px' }}>
                     <Col md={{ span: 6, offset: 3 }}>
                         <Form onSubmit={userSignup}>
-                                    <Input
-                                        label="Your Name"
-                                        placeholder="Your Name"
-                                        value={name}
-                                        type='text'
-                                        onChange={(e) => setName(e.target.value)}
-                                    />
+                            <Input
+                                label="Your Name"
+                                placeholder="Your Name"
+                                value={name}
+                                type='text'
+                                onChange={(e) => setName(e.target.value)}
+                            />
 
                             <Input
                                 label="Email"

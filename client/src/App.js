@@ -9,7 +9,11 @@ import Contact from './Components/Contact';
 import Cart from "./Components/Cart";
 import Error from "./Components/Error";
 import Footer from "./Components/Footer";
+import axios from "axios";
+import { ToastContainer } from "react-toastify";
 
+
+axios.defaults.withCredentials=true;
 
 function App() {
   return (
@@ -43,6 +47,7 @@ function App() {
               <Error />
             </Route>
           </Switch>
+          <ToastContainer />
         </div>
 
         <Footer />

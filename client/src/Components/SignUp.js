@@ -36,7 +36,7 @@ const SignUp = () => {
 
         const data = await res.json();
 
-        if (res.status === 400 || !data) {
+        if ((res.status >= 400 && res.status<=500) || !data) {
             toast.error("Invalid Registration", {
                 position: "top-center",
                 autoClose: 5000,

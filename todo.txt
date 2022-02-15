@@ -41,3 +41,20 @@ redirect from signin to home. -> Done spelling error
 initaistate spellling chnaged to initstate in authreducer js
 
 for adding sub categpry see video 14 in frntend
+
+
+
+
+26-1-22
+chnages in auth controller and model for confirm password field.
+toastify chnages to manage when login and success successfull
+also chnaged status code in login and logout of both admin and customer
+
+
+27-1-22
+video 3 of rizwan is for jwt verification
+video 4 is use of express validator and validation implemenation
+video 7 to be continued
+
+28-1-22
+product controller small modification

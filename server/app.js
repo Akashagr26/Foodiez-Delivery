@@ -38,10 +38,13 @@ app.use((req,res,next)=>{
 
 
 // setting cross platform
-app.use(cors());
+app.use(cors({
+    origin:["http://localhost:3000","http://localhost:4000"],
+    credentials:true,
+}));
 
 
-//linking routes files
+//linking routes files (middleware) 
 app.use(require('./routes/auth'));
 app.use(require('./routes/admin/auth'));
 app.use(require('./routes/category'));

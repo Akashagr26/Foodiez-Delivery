@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const Home = () => {
     const [menu, setMenu] = useState([]);
-    let url='http://localhost:8000/';
+    let url='http://localhost:8000';
     useEffect(() => {
         axios.get(url).then(res => {
             setMenu(res.data)

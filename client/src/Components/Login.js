@@ -14,40 +14,45 @@ const Login = () => {
   const loginUSer = async (e)=>{
     e.preventDefault();
 
-    const res = await fetch("/signin",{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json"
-      },
-      body:JSON.stringify({
-        email,password
-      })
-    });
-
-    const data =res.json();
-
-    if(res.status===400 || !data){
-      toast.error("Inavlid Login", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      })
-    }
-    else{
-      toast.success("Login succeccsul", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+    try {
+      const res = await fetch("/signin",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+          email,password
+        })
       });
-      history.push("/");
+  
+      const data =res.json();
+      console.log(data);
+      
+      if((res.status>=400 && res.status<=500) || !data){
+        toast.error("Inavlid Login", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      }
+      else{
+        toast.success("Login succeccsul", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        history.push("/");
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 

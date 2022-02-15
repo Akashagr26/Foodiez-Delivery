@@ -8,7 +8,7 @@ exports.addCategrory=(req,res)=>{
         slug:slugify(req.body.name)
     }
 
-    // if(req.body.parentId){
+    // if(req.body.parentId){                           // for sub categories
     //     categoryObj.parentId=req.body.parentId
     // }
 

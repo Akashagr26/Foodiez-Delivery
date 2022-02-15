@@ -9,18 +9,19 @@ function authController(){
             const{name ,email,phone,password,cpassword}= req.body;
 
             if(!name || !email|| !phone|| !password|| !cpassword){
-                return res.status(422).json({error:"plz fill fields properly"})
+                return res.status(401).json({error:"plz fill fields properly"})
             }
 
             try {
                 const userExist = await User.findOne({email:email})
 
                 if(userExist){
-                    return res.status(422).json({error:"Email already exist"});
+                    return res.status(401).json({message:"Email already exist"}); // change
                 }else if(password!=cpassword){
-                    return res.status(422).json({error:"Password does not match"});
+                    return res.status(401).json({error:"Password does not match"});
                 }else{
-                    const user=new User({name ,email,phone,password,cpassword,role:'admin'});
+                    const user=new User({name ,email,phone,password,role:'admin'});
+                    // const user=new User({name ,email,phone,password,cpassword,role:'admin'});
 
                 await user.save();
 
@@ -30,6 +31,7 @@ function authController(){
 
             } catch (error) {
                 console.log(error);
+                res.status(500).json({message:"Internal server error"})
             }
         },
         async signin(req,res){
@@ -54,17 +56,18 @@ function authController(){
                     })
         
                     if(!isMatch){
-                        res.status(400).json({error:"Invaid Credential"})
+                        res.status(401).json({error:"Invaid Credential"})
                     }else{
                         res.status(200).json({token:token,user:userLogin,message:'Login Successfull'})
                     }
                 }
                 else{
-                    res.status(400).json({error:"Invaid Credential"})
+                    res.status(401).json({error:"Invaid Credential"})
                 }
         
             } catch (error) {
                 console.log(error);
+                res.status(500).json({ message: "internal server error", error: error })
             }
         },
         async signout(req,res){

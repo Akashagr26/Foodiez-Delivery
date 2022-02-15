@@ -1,4 +1,6 @@
 const mongoose=require('mongoose');
+
+
 const categorySchema= new mongoose.Schema({
 
     name:{
@@ -12,7 +14,7 @@ const categorySchema= new mongoose.Schema({
         unique:true
     },
     parentId:{
-        type:String
+        type:String             // will use for sub categories
     }
     
 },{timestamps:true})

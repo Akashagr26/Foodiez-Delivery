@@ -4,7 +4,6 @@ import {FaShoppingCart } from 'react-icons/fa';
 import logo from '../images/3697355.png'
 
 
-
 const Navbar = () => {
 
     return (
