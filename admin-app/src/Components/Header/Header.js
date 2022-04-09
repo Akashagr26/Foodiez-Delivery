@@ -17,7 +17,7 @@ const Header = (props) => {
         return (
             <Nav>
                 <li className="nav-item">
-                    <span className="nav-link" onClick={logout}>Signout</span>
+                    <span role='button' className="nav-link" onClick={logout}>Signout</span>
                 </li>
             </Nav>
         )
@@ -39,8 +39,8 @@ const Header = (props) => {
 
     return (
         <>
-            <Navbar bg="dark" expand="lg" variant='dark' style={{ zIndex: 1 }}>
-                <Container >
+            <Navbar bg="dark" fixed='top' expand="lg" variant='dark' style={{ zIndex: 1 }}>
+                <Container fluid>
                     <Link to='/' className='navbar-brand'>Admin DashBoard</Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

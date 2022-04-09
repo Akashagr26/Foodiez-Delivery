@@ -1,29 +1,29 @@
 import axios from "../helpers/axios"
 import { categoryConstant } from "./Constants";
 
-export const getAllCategory=()=>{
-    return async dispatch =>{
+// export const getAllCategory=()=>{                                            //removed
+//     return async dispatch =>{
 
-        dispatch({type:categoryConstant.GET_ALL_CATEGORIES_REQUEST});
+//         dispatch({type:categoryConstant.GET_ALL_CATEGORIES_REQUEST});
 
-        const res=await axios.get('category/getcategory') 
-        console.log(res);
-        if(res.status===200){
+//         const res=await axios.get('category/getcategory') 
+//         console.log(res);
+//         if(res.status===200){
 
-            const {categories }=res.data
+//             const {categories }=res.data
 
-            dispatch({
-                type:categoryConstant.GET_ALL_CATEGORIES_SUCCESS,
-                payload:{categories:categories}
-            })
-        }else{
-            dispatch({
-                type:categoryConstant.GET_ALL_CATEGORIES_FAILURE,
-                payload:{error:res.data.error}
-            })
-        }
-    }
-}
+//             dispatch({
+//                 type:categoryConstant.GET_ALL_CATEGORIES_SUCCESS,
+//                 payload:{categories:categories}
+//             })
+//         }else{
+//             dispatch({
+//                 type:categoryConstant.GET_ALL_CATEGORIES_FAILURE,
+//                 payload:{error:res.data.error}
+//             })
+//         }
+//     }
+// }
 
 export const addCategory=(name)=>{
     return async dispatch=>{

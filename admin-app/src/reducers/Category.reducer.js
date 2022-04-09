@@ -6,6 +6,21 @@ const initState={
     error:null
 };
 
+const showCategory=(categories,category )=>{
+    let myCategories=[];
+
+    for(let cat of categories){
+        myCategories.push({
+            ...cat,
+        })
+    }
+    myCategories.push({
+        ...category
+    })
+    return myCategories
+}
+  
+
 const CategoryReducer=(state=initState,action)=>{
     switch(action.type){
         case categoryConstant.GET_ALL_CATEGORIES_SUCCESS:
@@ -24,9 +39,8 @@ const CategoryReducer=(state=initState,action)=>{
         case categoryConstant.ADD_NEW_CATEGORY_SUCCESS:
             state={
                 ...state,
-                categories:action.payload.category,
-                loading:true
-
+                categories:showCategory(state.categories,action.payload.category),
+                loading:false   // changed
             }
             break;
         case categoryConstant.ADD_NEW_CATEGORY_FAILURE:

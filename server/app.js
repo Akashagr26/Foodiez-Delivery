@@ -17,6 +17,11 @@ const User =require('./models/userSchema')
 app.use(express.json());
 
 
+// exposing static files to web browser
+app.use(express.static(path.join(__dirname,'uploads')));
+
+
+
 // session config
 app.use(session({
     secret:process.env.SECRET_KEY,
@@ -50,6 +55,7 @@ app.use(require('./routes/admin/auth'));
 app.use(require('./routes/category'));
 app.use(require('./routes/product'));
 app.use(require('./routes/cart'));
+app.use(require('./routes/admin/initialData'));
 
 // for acessing static files through path name
 app.use(express.static(path.join(__dirname,"uploads")));

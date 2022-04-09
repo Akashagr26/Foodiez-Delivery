@@ -7,9 +7,11 @@ import Signin from './Containers/SignIn/Signin';
 import Signup from './Containers/Signup/Signup';
 import { useDispatch, useSelector } from 'react-redux'
 import { isUserLoggedIn } from './actions/Auth.actions'
+import { getInitialData } from './actions/Action'
 import Products from './Containers/Products/Products';
 import Orders from './Containers/Orders/Orders';
 import Category from './Containers/Category/Category';
+// import { getInitialData } from './actions/initialData.action';
 
 function App(props) {
 
@@ -21,6 +23,7 @@ function App(props) {
     if (!auth.authenticate) {
       dispatch(isUserLoggedIn());
     }
+    dispatch(getInitialData())
   }, [])
 
 

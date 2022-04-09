@@ -58,3 +58,18 @@ video 7 to be continued
 
 28-1-22
 product controller small modification
+
+07-04-22
+static files exposed to web browser in app.js using app.use express
+login failure dispatch not working in auth.action when status code >=400
+auth.action mai sugnup ka ku likha hai? 
+admin dash board navbar container fluid option for spacing
+made signout button hover a cursor in admin dashboard
+
+*********private routes video 11 ********
+*********to make private routes work perfectly and to add logout button(hiding loin and signup) salso watch vdeo 12*************
+
+
+
+09-04-22
+vdo 18 ->12 min dependecies to be instaled for customer frontend(react-router-dom redux react-redux redux-thunk axios)

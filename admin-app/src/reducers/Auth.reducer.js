@@ -35,7 +35,7 @@ const AuthReducer = (state=initState,action) => {
             break;
         case authConstant.LOGOUT_REQUEST:
             state={
-                ...state,
+                ...state,       // initstate
                 loading:true
             }
             break;
